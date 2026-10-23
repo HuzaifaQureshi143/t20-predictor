@@ -1,0 +1,97 @@
+.page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: var(--space-3) var(--space-2);
+}
+
+.page-header p {
+    color: var(--color-muted);
+}
+
+.notice {
+    margin-bottom: var(--space-2);
+    padding: var(--space-2);
+    border-radius: var(--radius);
+    background: var(--color-notice-bg);
+    color: var(--color-notice-text);
+}
+
+.tabs {
+    display: flex;
+    gap: var(--space-1);
+    margin-bottom: var(--space-2);
+}
+
+.tab {
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: inherit;
+    cursor: pointer;
+}
+
+.tab.active {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+}
+
+.card {
+    margin-bottom: var(--space-2);
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-2);
+    margin: var(--space-2) 0;
+}
+
+.field {
+    display: grid;
+    gap: var(--space-1);
+    font-weight: 600;
+}
+
+.field input {
+    padding: var(--space-1);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font: inherit;
+}
+
+.primary {
+    padding: var(--space-1) var(--space-3);
+    border: 0;
+    border-radius: var(--radius);
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    font: inherit;
+    cursor: pointer;
+}
+
+.primary:hover:not(:disabled) {
+    background: var(--color-primary-hover);
+}
+
+.primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.error {
+    color: var(--color-error);
+    font-weight: 600;
+}
+
+.value {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
