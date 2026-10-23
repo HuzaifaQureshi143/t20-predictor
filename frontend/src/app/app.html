@@ -3,22 +3,25 @@
     <h1>T20 Performance Predictor</h1>
     <p>Angular frontend, Flask API and XGBoost models.</p>
   </header>
+
   @if (!isLocal) {
   <aside class="notice" role="status">
     Static GitHub Pages demo. Predictions need the Flask backend running on
     your own computer.
   </aside>
   }
+
   <nav class="tabs" aria-label="Model type">
     @for (model of models; track model.kind) {
-    <button type="button" class="tab" T20 Predictor: Full Stack CI/CD Lab Manual Page 15 of 30
-      [class.active]="model.kind === activeKind()" (click)="select(model.kind)">
+    <button type="button" class="tab" [class.active]="model.kind === activeKind()" (click)="select(model.kind)">
       {{ model.title }}
     </button>
     }
   </nav>
+
   <form class="card" (ngSubmit)="submit()">
     <h2>Predict {{ active().target }}</h2>
+
     <div class="grid">
       @for (field of active().fields; track field.key) {
       <label class="field">
@@ -28,13 +31,16 @@
       </label>
       }
     </div>
+
     <button type="submit" class="primary" [disabled]="loading() || !isLocal">
       {{ loading() ? 'Predicting' : 'Predict' }}
     </button>
   </form>
+
   @if (error()) {
   <p class="error" role="alert">{{ error() }}</p>
   }
+
   @if (result(); as r) {
   <section class="card result" aria-live="polite">
     <h2>Result</h2>
