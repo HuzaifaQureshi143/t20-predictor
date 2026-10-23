@@ -1,18 +1,20 @@
 # Python
+backend/venv/
 .venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
+
 # Angular (frontend/.gitignore also covers these)
 frontend/node_modules/
 frontend/dist/
 frontend/.angular/
+
 # Large raw data stays out of GitHub
 data/
 *.csv
+
 # Local files
-T20 Predictor: Full Stack CI/CD Lab Manual
-Page 21 of 30
 .env
 *.log
 .vscode/
