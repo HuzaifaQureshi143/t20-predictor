@@ -5,11 +5,6 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 
-# Angular (frontend/.gitignore also covers these)
-frontend/node_modules/
-frontend/dist/
-frontend/.angular/
-
 # Local files
 .env
 *.log
