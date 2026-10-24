@@ -27,6 +27,11 @@ export class App {
     this.error.set('');
     this.result.set(null);
   }
+  fillExample(): void {
+    this.values = { ...this.active().example };
+    this.error.set('');
+    this.result.set(null);
+  }
   submit(): void {
     this.error.set('');
     this.result.set(null);

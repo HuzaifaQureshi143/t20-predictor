@@ -3,6 +3,7 @@
     <h1>T20 Performance Predictor</h1>
     <p>Angular frontend, Flask API and XGBoost models.</p>
     <p>By 231975 (Huzaifa Qureshi)</p>
+    <p>Enter the stats of a finished innings or spell. The model returns the matching runs.</p>
   </header>
 
   @if (!isLocal) {
@@ -22,6 +23,7 @@
 
   <form class="card" (ngSubmit)="submit()">
     <h2>Predict {{ active().target }}</h2>
+    <p class="intro">{{ active().intro }}</p>
 
     <div class="grid">
       @for (field of active().fields; track field.key) {
@@ -29,13 +31,17 @@
         <span>{{ field.label }}</span>
         <input type="number" [name]="field.key" [min]="field.min" [max]="field.max" [step]="field.step"
           [(ngModel)]="values[field.key]" />
+        <small class="hint">{{ field.hint }}</small>
       </label>
       }
     </div>
 
-    <button type="submit" class="primary" [disabled]="loading() || !isLocal">
-      {{ loading() ? 'Predicting' : 'Predict' }}
-    </button>
+    <div class="actions">
+      <button type="submit" class="primary" [disabled]="loading() || !isLocal">
+        {{ loading() ? 'Predicting' : 'Predict' }}
+      </button>
+      <button type="button" class="link" (click)="fillExample()">Fill example</button>
+    </div>
   </form>
 
   @if (error()) {
@@ -46,7 +52,7 @@
   <section class="card result" aria-live="polite">
     <h2>Result</h2>
     <p class="value">{{ r.prediction }}</p>
-    <p>Predicted {{ r.target }} ({{ r.model }} model)</p>
+    <p>Estimated {{ r.target }} for the stats you entered</p>
   </section>
   }
 </main>
