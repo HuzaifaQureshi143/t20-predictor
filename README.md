@@ -45,7 +45,7 @@ t20-predictor/
 * Python 3.14
 * Node.js 24 and pnpm 11
 * Git
-* Windows PowerShell (commands below use PowerShell syntax)
+* Windows Command Prompt (CMD)
 
 ## Run locally
 
@@ -53,20 +53,19 @@ Use two terminals, both opened in the project root.
 
 ### Terminal 1: backend
 
-```powershell
-git clone https://github.com/YOUR_USERNAME/t20-predictor.git
-cd t20-predictor
-py -3.14 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r backend\requirements.txt
-python backend\app.py
+```cmd
+cd backend
+python -m venv venv
+venv\Scripts\activate.bat
+python -m pip install -r requirements.txt
+python app.py
 ```
 
 Flask runs at http://127.0.0.1:5000. Open http://127.0.0.1:5000/health to confirm it is up. Leave this terminal running.
 
 ### Terminal 2: frontend
 
-```powershell
+```cmd
 cd frontend
 pnpm install
 pnpm start
@@ -104,18 +103,18 @@ Response:
 
 Missing, extra, non numeric or out of range fields return HTTP 400 with an `error` message. An unknown model name returns 404.
 
-Example call from PowerShell:
+Example call from CMD:
 
-```powershell
-$body = @{ balls = 20; fours = 3; sixes = 2; strike_rate = 150 } | ConvertTo-Json
-Invoke-RestMethod -Method Post -Uri http://127.0.0.1:5000/predict/batting -ContentType "application/json" -Body $body
+```cmd
+curl -X POST http://127.0.0.1:5000/predict/batting -H "Content-Type: application/json" -d "{\"balls\":20,\"fours\":3,\"sixes\":2,\"strike_rate\":150}"
 ```
 
 ## Run the tests
 
-```powershell
-python -m pytest -q backend\tests
-cd frontend
+```cmd
+cd backend
+python -m pytest -q tests
+cd ..\frontend
 pnpm build
 ```
 
@@ -141,5 +140,5 @@ Run the export cell at the end of `notebooks/Lab02_Devops_Final_Version.ipynb`, 
 
 ## Notes
 
-* Strike Rate and Economy are calculated from the value being predicted, so the very high R² scores (about 0.999) are expected. This is prototype and serves only for understanding devops
+* Strike Rate and Economy are calculated from the value being predicted, so the very high R² scores (about 0.999) are expected. This is a prototype intended for learning DevOps concepts.
 * Only the Angular page is deployed. The backend is committed to the repository and tested in CI, but never hosted.
