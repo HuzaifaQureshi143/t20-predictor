@@ -4,13 +4,11 @@ Roll ID: 231975
 Section: BSSE-7A  
 
 Collaborator added on: Friday (23 October, 2026)  
-Page Live at: https://huzaifaqureshi143.github.io/t20-predictor/  
+**Live demo (static page only):** https://HuzaifaQureshi143.github.io/t20-predictor/
 
 # T20 Performance Predictor
 
 A small full stack machine learning project built for a DevOps lab. XGBoost models predict a T20 cricket player's **runs scored** (batting) or **runs conceded** (bowling). Flask serves the models, Angular provides the web page, and GitHub Actions handles CI and CD.
-
-**Live demo (static page only):** https://HuzaifaQureshi143.github.io/t20-predictor/
 
 The live page is a static Angular build on GitHub Pages. The Flask backend is not hosted, so predictions work only when you run the project locally.
 
