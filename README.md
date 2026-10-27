@@ -1,9 +1,9 @@
-# By 
-Name: M Huzaifa Qureshi  
-Roll ID: 231975  
-Section: BSSE-7A  
+# Academic Project
 
-Collaborator added on: Friday (23 October, 2026)  
+**Name**: M Huzaifa Qureshi  
+**Roll ID**: 231975  
+**Section**: BSSE-7A  
+ 
 **Live demo (static page only):** https://HuzaifaQureshi143.github.io/t20-predictor/
 
 # T20 Performance Predictor
