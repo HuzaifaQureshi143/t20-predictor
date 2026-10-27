@@ -4,7 +4,7 @@
 **Roll ID**: 231975  
 **Section**: BSSE-7A  
  
-**Live demo (static page only):** https://HuzaifaQureshi143.github.io/t20-predictor/
+**Live demo (static page only):** https://muhammad-huzaifa-qureshi.github.io/t20-predictor/
 
 # T20 Performance Predictor
 
